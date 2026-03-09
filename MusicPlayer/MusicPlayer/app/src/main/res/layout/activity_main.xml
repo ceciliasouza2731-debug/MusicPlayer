@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0F"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🎵 Music Player"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+
+            <Button
+                android:id="@+id/btnSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="＋ Músicas"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:backgroundTint="#5C3BCB"
+                android:paddingHorizontal="16dp" />
+        </LinearLayout>
+
+        <!-- Visualizer -->
+        <com.musicplayer.WaveformView
+            android:id="@+id/waveformView"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/card_background" />
+
+        <!-- Song info card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/tvSongName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nenhuma música selecionada"
+                android:textColor="#EAEAEA"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scrollHorizontally="true"
+                android:selected="true"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvSongIndex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0 / 0"
+                android:textColor="#9090AA"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:paddingTop="4dp" />
+        </LinearLayout>
+
+        <!-- Seek bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="12dp">
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressTint="#7C5CBF"
+                android:thumbTint="#A080FF" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="00:00 / 00:00"
+                android:textColor="#9090AA"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingTop="4dp" />
+        </LinearLayout>
+
+        <!-- Playback controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingHorizontal="20dp">
+
+            <ImageButton
+                android:id="@+id/btnPrev"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_prev"
+                android:background="@drawable/circle_button_bg"
+                android:tint="#C0B0FF"
+                android:scaleType="centerInside"
+                android:padding="14dp" />
+
+            <Space android:layout_width="24dp" android:layout_height="0dp" />
+
+            <ImageButton
+                android:id="@+id/btnPlayPause"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_play"
+                android:background="@drawable/play_button_bg"
+                android:tint="#FFFFFF"
+                android:scaleType="centerInside"
+                android:padding="16dp" />
+
+            <Space android:layout_width="24dp" android:layout_height="0dp" />
+
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_next"
+                android:background="@drawable/circle_button_bg"
+                android:tint="#C0B0FF"
+                android:scaleType="centerInside"
+                android:padding="14dp" />
+        </LinearLayout>
+
+        <!-- Volume control -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/section_card"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🔈 Volume"
+                    android:textColor="#DDDDDD"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seekBarVolume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:progressTint="#7C5CBF"
+                android:thumbTint="#A080FF" />
+        </LinearLayout>
+
+        <!-- Boost section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/section_card"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🚀 Sound Boost"
+                    android:textColor="#DDDDDD"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchBoost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvBoostLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Boost: +0.0 dB"
+                android:textColor="#9090AA"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:paddingTop="4dp" />
+
+            <SeekBar
+                android:id="@+id/seekBarBoost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:enabled="false"
+                android:progressTint="#FF6B35"
+                android:thumbTint="#FF8C5A" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚠️ Use o boost com cuidado para proteger o alto-falante"
+                android:textColor="#AA7744"
+                android:textSize="11sp"
+                android:paddingTop="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

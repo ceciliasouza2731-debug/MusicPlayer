@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MusicPlayer" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#5C3BCB</item>
+        <item name="colorPrimaryDark">#0A0A0F</item>
+        <item name="colorAccent">#A080FF</item>
+        <item name="android:windowBackground">#0A0A0F</item>
+        <item name="android:statusBarColor">#0A0A0F</item>
+        <item name="android:navigationBarColor">#0A0A0F</item>
+    </style>
+</resources>
